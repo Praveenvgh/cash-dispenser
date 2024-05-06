@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "f4b7131c-df48-4657-b052-fb81a3c95d58",
+		"name": "CashDispenserAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34711819"
+	},
+	"item": [
+		{
+			"name": "CurrentBalance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "admin",
+						"username": "admin"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/atm/v1/currentBalance"
+			},
+			"response": []
+		},
+		{
+			"name": "ReloadBalance",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "admin",
+						"username": "admin"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FIFTY\": 100,\r\n    \"TWENTY\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/atm/v1/reloadBalance"
+			},
+			"response": []
+		},
+		{
+			"name": "WithdrawCash",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "guest",
+						"username": "guest"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/atm/v1/withdraw/1000"
+			},
+			"response": []
+		}
+	]
+}
